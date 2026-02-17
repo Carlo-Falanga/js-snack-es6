@@ -83,10 +83,18 @@ function getRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;
 }
 
+const namesAndFouls = []
+
 for (let i = 0; i < footballTeams.length; i++){
     const footballTeam = footballTeams[i]
     footballTeam.points = getRandomNum(1, 100)
     footballTeam.fouls = getRandomNum(100, 200)
-    console.log(footballTeam);
-    
+
+    namesAndFouls.push({
+        name: footballTeam.name,
+        fouls: footballTeam.fouls
+
+    })
 }
+
+console.log(namesAndFouls);
